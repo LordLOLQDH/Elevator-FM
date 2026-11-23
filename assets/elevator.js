@@ -1,25 +1,25 @@
-// Autonomous elevator cycle: open, dwell, close, travel, stop, reopen.
+// Autonomous landing cycle: open, dwell, close, travel ambience, update floor, reopen.
 const scene=document.querySelector('#lift');
 const display=document.querySelector('#floorDisplay');
 const floorLamp=document.querySelector('#insideFloor');
-const floors=[1,2,3,0];let index=0;
+const floors=['01','02','03','G'];let index=0;
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-function showFloor(n){const f=n===0?'G':String(n).padStart(2,'0');display.textContent=f;floorLamp.textContent='FLOOR '+f;}
+function showFloor(f){display.textContent=f;floorLamp.textContent='FLOOR '+f;}
 async function runElevator(){
-  while(true){
-    scene.classList.add('open');
-    await wait(4300);                 // Doors open, cabin waits
-    scene.classList.remove('open');    // Close doors completely
-    await wait(2100);                 // Closed doors pause
-    scene.classList.add('moving');     // Car travels through shaft
-    await wait(6900);
-    scene.classList.remove('moving');
-    index=(index+1)%floors.length;
-    showFloor(floors[index]);
-    await wait(1000);                 // Settle before opening
-    scene.classList.add('open');
-    await wait(4800);
-  }
+ while(true){
+  scene.classList.add('open');
+  await wait(6200);
+  scene.classList.remove('open');
+  await wait(2200);
+  scene.classList.add('moving');
+  await wait(5100);
+  scene.classList.remove('moving');
+  index=(index+1)%floors.length;
+  showFloor(floors[index]);
+  await wait(1600);
+  scene.classList.add('open');
+  await wait(5600);
+ }
 }
 runElevator();
 // Radio player
