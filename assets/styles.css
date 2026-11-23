@@ -1,66 +1,35 @@
-:root{color-scheme:light;--paper:#f5f4f0;--ink:#202322;--soft:#737975;--line:#dedfda;--green:#748781;--dark:#242827;--panel:#fff}
+:root{color-scheme:light;--paper:#f5f4f0;--ink:#202322;--soft:#737975;--line:#dedfda;--green:#748781;--panel:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100svh;overflow-x:hidden}
-.site{max-width:1150px;margin:auto;padding:26px 26px 30px}header{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:46px;height:46px}.brandname{font-size:12px;letter-spacing:.16em;font-weight:750}.live{font-size:10px;letter-spacing:.14em;color:#536b61;display:flex;gap:8px;align-items:center}.led{width:7px;height:7px;border-radius:50%;background:#7a9b86;box-shadow:0 0 0 4px #7a9b8619;animation:pulse 2.3s infinite}
+.site{max-width:1150px;margin:auto;padding:26px}header{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:46px;height:46px;object-fit:contain}.brandname{font-size:12px;letter-spacing:.16em;font-weight:750}.live{font-size:10px;letter-spacing:.14em;color:#536b61;display:flex;gap:8px;align-items:center}.led{width:7px;height:7px;border-radius:50%;background:#7a9b86;box-shadow:0 0 0 4px #7a9b8619;animation:pulse 2.3s infinite}
 main{padding-top:38px}.hero{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(24px,5vw,60px);align-items:center}.copy{padding:14px 0}.smallcaps{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}h1{font-size:clamp(44px,7vw,82px);line-height:.94;letter-spacing:-.075em;font-weight:650;margin:20px 0 18px}h1 span{font-weight:350;color:#77807a}.intro{font-size:15px;line-height:1.8;color:#69716d;max-width:420px}.quiet{margin-top:30px;display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.12em;color:#67716c}
-.lift-wrap{width:100%;position:relative}.lift-scene{height:min(56vw,560px);min-height:380px;border-radius:18px;background:linear-gradient(180deg,#e5e7e3,#cbd0cc);overflow:hidden;position:relative;perspective:1200px;box-shadow:0 25px 70px #202a2416}
-.scene-label{position:absolute;left:22px;top:18px;z-index:6;font-size:9px;letter-spacing:.18em;color:#59615d}.floor-display{position:absolute;right:24px;top:18px;z-index:6;background:#222827;color:#f6f5f0;border-radius:5px;padding:9px 12px;font-size:12px;letter-spacing:.15em;min-width:46px;text-align:center}
-.lift-frame{position:absolute;inset:54px 12% 0;background:linear-gradient(90deg,#9ca5a0,#f3f4f1 8%,#cbd0cc 50%,#f3f4f1 92%,#9ca5a0);box-shadow:inset 0 0 0 2px #a5aca8,0 16px 35px #27312a26;overflow:hidden}
-.cabin{position:absolute;inset:0;background:linear-gradient(90deg,#bcc3be 0%,#e7e9e5 9%,#d9ddd8 50%,#e7e9e5 91%,#bcc3be);transition:filter .7s}
-.cabin-top{height:16px;background:linear-gradient(#909a95,#c7ccc8);border-bottom:1px solid #aab1ac}.cabin-wall{position:absolute;inset:16px 12% 0;background:linear-gradient(90deg,#c8ceca,#f3f4f1 25%,#e7eae6 70%,#c7cdc8);box-shadow:inset 0 0 30px #69746b22}
-.cabin-mirror{position:absolute;left:15%;top:17%;width:25%;height:40%;background:linear-gradient(135deg,#bcc5c0,#e9ece9,#b7c1bb);border:5px solid #c5cbc7;border-radius:2px;opacity:.72}.cabin-rail{position:absolute;left:12%;right:12%;bottom:22%;height:8px;border-radius:10px;background:linear-gradient(#8f9993,#dce0dc,#919a94);box-shadow:0 3px 3px #68716b33}.floor-lamp{position:absolute;left:50%;top:12%;transform:translateX(-50%);font-size:10px;letter-spacing:.2em;color:#59615d}
-.door-track{position:absolute;inset:0;z-index:3;display:flex;perspective:900px;transform-style:preserve-3d}.door{width:50%;height:100%;background:linear-gradient(90deg,#8f9892 0%,#d4d8d4 6%,#edf0ed 26%,#c8ceca 72%,#a5ada8 100%);border:1px solid #a5aca7;box-shadow:inset 0 0 30px #515b5420;transition:transform 2s cubic-bezier(.65,0,.2,1);position:relative}.door:after{content:"";position:absolute;top:0;bottom:0;width:4px;background:#8c9690;box-shadow:0 0 0 1px #e8ebe7;right:4px}.door.right:after{left:4px;right:auto}.door.left{transform-origin:left center}.door.right{transform-origin:right center}
-.lift-scene.open .door.left{transform:translateX(-101%) rotateY(8deg)}.lift-scene.open .door.right{transform:translateX(101%) rotateY(-8deg)}.door-seam{position:absolute;top:0;bottom:0;left:50%;z-index:4;width:1px;background:#7d8781;transition:opacity .3s}.lift-scene.open .door-seam{opacity:0}
-.floor-strip{position:absolute;left:0;right:0;bottom:0;height:34px;z-index:5;background:#d0d4d0cc;display:flex;align-items:center;justify-content:center;gap:9px;font-size:8px;letter-spacing:.22em;color:#616a65}.floor-strip span{width:18px;height:18px;border:1px solid #aab1ac;border-radius:50%;display:grid;place-items:center}.floor-strip .lit{background:#667c72;color:white;border-color:#667c72}
-.scene-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#e8ebe780,transparent 25%,transparent 80%,#b6beb880)}
-.motion-blur{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:repeating-linear-gradient(180deg,transparent 0 38px,#fff4 39px 41px);transition:opacity .5s}.lift-scene.moving .motion-blur{opacity:.65;animation:lines .38s linear infinite}
-.lift-scene.moving .cabin{animation:cabinShift 1.4s ease-in-out infinite;filter:blur(.4px)}.lift-scene.moving .floor-display{color:#a5c2b4;animation:displayFlicker .35s infinite}
+.lift-wrap{width:100%;position:relative}.lift-scene{height:min(56vw,560px);min-height:380px;border-radius:16px;background:linear-gradient(130deg,#dedbd3,#c4c2bb);overflow:hidden;position:relative;box-shadow:0 25px 70px #202a2416;isolation:isolate}
+.lift-scene:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 5%,#ffffffb0,transparent 48%),linear-gradient(120deg,#c8c6bf,#e7e5de 42%,#b9b7b0);z-index:0}
+.scene-label{position:absolute;left:22px;top:18px;z-index:8;font-size:9px;letter-spacing:.18em;color:#59615d}.floor-display{position:absolute;right:24px;top:18px;z-index:8;background:#222827;color:#f6f5f0;border-radius:4px;padding:9px 12px;font-size:12px;letter-spacing:.15em;min-width:46px;text-align:center;box-shadow:0 5px 16px #161d1930}
+.lift-frame{position:absolute;inset:65px 12% 44px;background:linear-gradient(90deg,#2a302c 0%,#717b74 3%,#d4d8d4 6%,#f0f2ef 10%,#929c95 13%,#323a35 50%,#929c95 87%,#f0f2ef 90%,#d4d8d4 94%,#717b74 97%,#2a302c 100%);box-shadow:0 24px 38px #20282040,inset 0 0 0 2px #d6dbd6;overflow:hidden}
+.lift-frame:before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(180deg,transparent 0 115px,#aab2ad55 116px 118px,transparent 119px 230px);opacity:.55}
+.cabin{position:absolute;inset:0;background:linear-gradient(90deg,#39413b 0%,#88938c 3%,#d9dedb 7%,#c5ccc7 18%,#edf0ed 50%,#c5ccc7 82%,#d9dedb 93%,#88938c 97%,#39413b 100%);box-shadow:inset 0 0 55px #18211b40}
+.cabin-top{height:28px;background:linear-gradient(#59645d,#adb6b0 42%,#e1e5e1);box-shadow:inset 0 -2px 5px #47514940}
+.cabin-wall{position:absolute;inset:28px 7% 0;background:linear-gradient(90deg,#7e8982,#cbd2cd 9%,#e8ece9 23%,#e1e6e2 50%,#e8ece9 77%,#cbd2cd 91%,#7e8982);box-shadow:inset 0 0 65px #59655e40}
+.cabin-mirror{position:absolute;left:50%;top:18%;transform:translateX(-50%);width:40%;height:48%;background:linear-gradient(120deg,#8d9992,#e6ebe7 24%,#bcc6c0 65%,#f3f5f3);border:8px solid #aeb8b2;opacity:.9;box-shadow:0 10px 25px #26302a20,inset 0 0 20px #fff8}
+.cabin-rail{position:absolute;left:8%;right:8%;bottom:17%;height:5px;border-radius:8px;background:linear-gradient(#7c8780,#dce1dd,#838d86);box-shadow:0 3px 8px #45504750}
+.floor-lamp{position:absolute;left:50%;top:7%;transform:translateX(-50%);font-size:10px;letter-spacing:.24em;color:#536059;font-weight:600}
+.door-track{position:absolute;inset:0;z-index:4;display:flex;overflow:hidden;background:linear-gradient(90deg,#222a25,#626d65 50%,#222a25)}
+.door{width:50%;height:100%;position:relative;box-shadow:inset 0 0 30px #222a251c;transition:transform 1.9s cubic-bezier(.65,.02,.22,1);will-change:transform}
+.door.left{background:linear-gradient(90deg,#414a44 0%,#89948d 5%,#d6dcd7 12%,#eef1ee 28%,#c8d0ca 73%,#929d95 96%,#515b54);border-right:1px solid #929b95}
+.door.right{background:linear-gradient(90deg,#515b54,#929d95 4%,#c8d0ca 27%,#eef1ee 72%,#d6dcd7 88%,#89948d 95%,#414a44);border-left:1px solid #929b95}
+.door.left:before,.door.right:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 15%,#ffffff28 42%,transparent 63%);pointer-events:none}
+.door.left{transform-origin:left center}.door.right{transform-origin:right center}
+.lift-scene.open .door.left{transform:translateX(-100%)}.lift-scene.open .door.right{transform:translateX(100%)}
+.door-seam{position:absolute;top:0;bottom:0;left:50%;z-index:5;width:1px;background:#66716a;opacity:.8}.lift-scene.open .door-seam{opacity:0}
+.floor-strip{position:absolute;left:0;right:0;bottom:0;height:40px;z-index:6;background:#b8c1bbd9;display:flex;align-items:center;justify-content:center;gap:9px;font-size:8px;letter-spacing:.22em;color:#616a65;backdrop-filter:blur(6px)}.floor-strip span{width:18px;height:18px;border:1px solid #aab1ac;border-radius:50%;display:grid;place-items:center}.floor-strip .lit{background:#667c72;color:white;border-color:#667c72}
+.scene-shade{position:absolute;inset:0;z-index:7;pointer-events:none;background:linear-gradient(180deg,#fff3 0%,transparent 25%,transparent 76%,#24302940)}
+.motion-blur{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:0;background:repeating-linear-gradient(180deg,transparent 0 38px,#fff3 39px 41px);transition:opacity .5s}
+.lift-scene.moving .motion-blur{opacity:.28;animation:shaftFlow .45s linear infinite}
+.lift-scene.moving .lift-frame:before{animation:shaftFlow .65s linear infinite;opacity:.8}
+.lift-scene.moving .floor-display{color:#b5c9bc;animation:displayFlicker .65s infinite alternate}
+.lift-scene.moving .scene-shade{background:linear-gradient(180deg,#202a2440,transparent 22%,#ffffff15 45%,transparent 65%,#202a2440)}
 footer{margin-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:#848b86;font-size:9px;letter-spacing:.13em}footer a{color:inherit;text-decoration:none}
 .player-card{margin-top:30px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:20px 24px;display:flex;align-items:center;gap:20px}.play{width:54px;height:54px;border:0;border-radius:50%;background:#27302b;color:white;display:grid;place-items:center;cursor:pointer;flex:0 0 auto}.play:hover{background:#52685e}.play svg{width:20px;height:20px}.track{flex:1;min-width:0}.track-title{font-size:12px;font-weight:650;letter-spacing:.04em}.status{font-size:11px;color:var(--soft);margin-top:6px}.volume{display:flex;align-items:center;gap:10px;color:#7b827e;width:160px}.volume svg{width:17px;height:17px}.volume input{width:100%;accent-color:#60776c}
-@keyframes pulse{50%{box-shadow:0 0 0 6px #7a9b860c;opacity:.65}}@keyframes lines{to{background-position:0 40px}}@keyframes cabinShift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes displayFlicker{50%{opacity:.5}}
-@media(max-width:720px){.site{padding:18px 17px 24px}main{padding-top:28px}.hero{grid-template-columns:1fr;gap:24px}.copy{padding:0}.intro{font-size:14px}h1{font-size:clamp(46px,13vw,68px);margin:15px 0}.lift-scene{height:440px;min-height:0}.lift-frame{inset:58px 8% 0}.player-card{padding:18px;gap:14px;flex-wrap:wrap}.volume{width:100%;padding-left:68px}}
+@keyframes pulse{50%{box-shadow:0 0 0 6px #7a9b860c;opacity:.65}}@keyframes shaftFlow{to{background-position:0 115px}}@keyframes displayFlicker{to{opacity:.55;filter:blur(.2px)}}
+@media(max-width:720px){.site{padding:18px 17px 24px}main{padding-top:28px}.hero{grid-template-columns:1fr;gap:24px}.copy{padding:0}.intro{font-size:14px}h1{font-size:clamp(46px,13vw,68px);margin:15px 0}.lift-scene{height:440px;min-height:0}.lift-frame{inset:58px 8% 42px}.cabin-mirror{width:48%!important}.player-card{padding:18px;gap:14px;flex-wrap:wrap}.volume{width:100%;padding-left:68px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
-
-/* Realism pass: clean door meeting edge, deeper shaft, restrained motion */
-.lift-scene{background:linear-gradient(180deg,#bfc6c1 0%,#e3e6e2 18%,#aeb7b2 100%);isolation:isolate}
-.lift-frame{background:linear-gradient(90deg,#707a74 0%,#aab2ad 3%,#e9ece9 7%,#b7bfba 12%,#8b9590 50%,#b7bfba 88%,#e9ece9 93%,#aab2ad 97%,#707a74 100%);box-shadow:inset 0 0 0 3px #7e8882,0 20px 45px #1f29231c}
-.lift-frame:before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(180deg,transparent 0 145px,#6d777222 146px 150px,transparent 151px 295px);opacity:.5}
-.cabin{background:linear-gradient(90deg,#9fa9a3 0%,#e3e7e3 5%,#d3d9d4 16%,#f2f4f1 48%,#c6cec8 82%,#e3e7e3 95%,#9fa9a3 100%);box-shadow:inset 0 0 60px #53605925}
-.cabin-wall{background:linear-gradient(90deg,#9da7a1 0%,#d9dedb 8%,#f0f2ef 20%,#dfe4e0 49%,#f0f2ef 80%,#d9dedb 92%,#9da7a1 100%);box-shadow:inset 0 0 45px #5b665f35}
-.cabin-top{height:22px;background:linear-gradient(#6e7972,#aeb7b1 45%,#d3d9d4);box-shadow:inset 0 -2px 5px #59645c44}
-.cabin-mirror{background:linear-gradient(120deg,#7f8a83,#e0e6e2 28%,#aab5ae 70%,#eff2ef);border:4px solid #aab3ad;opacity:.8;box-shadow:inset 0 0 18px #5b665f25,0 0 0 1px #f5f6f4}
-.cabin-rail{height:5px;background:linear-gradient(#7d8881,#dce1dd,#858f88);box-shadow:0 2px 8px #4b554d44}
-.door-track{gap:0;overflow:hidden;background:#343c37}
-.door{width:calc(50% + 1px);border:0;box-shadow:inset 0 0 22px #515b5414;will-change:transform;backface-visibility:hidden}
-.door:after{display:none!important}
-.door.left{margin-right:-1px;background:linear-gradient(90deg,#7e8982 0%,#c3cbc6 5%,#e8ece9 18%,#bfc8c2 68%,#89938c 100%);border-right:1px solid #78837c}
-.door.right{margin-left:-1px;background:linear-gradient(90deg,#89938c 0%,#c0c8c3 28%,#e9edea 82%,#c3cbc6 96%,#7e8982 100%);border-left:1px solid #78837c}
-.door.left,.door.right{transition:transform 1.85s cubic-bezier(.55,.03,.22,1)}
-.lift-scene.open .door.left{transform:translateX(-102%)}
-.lift-scene.open .door.right{transform:translateX(102%)}
-.door-seam{display:none!important}
-.lift-scene.moving .cabin{animation:carTravel 6.8s cubic-bezier(.5,.04,.2,1) forwards;filter:none}
-.lift-scene.moving .floor-display{animation:displayTravel .7s ease-in-out infinite alternate;color:#a5c2b4}
-.lift-scene.moving .motion-blur{opacity:.38;background:repeating-linear-gradient(180deg,transparent 0 24px,#f7f9f7aa 25px 27px,transparent 28px 72px);animation:shaftFlow .25s linear infinite}
-.lift-scene.moving .lift-frame:before{opacity:1;animation:shaftFlow .38s linear infinite}
-.lift-scene.moving .scene-shade{background:linear-gradient(180deg,#1d272355,transparent 16%,#ffffff12 38%,transparent 60%,#1d272355)}
-@keyframes carTravel{0%{transform:translateY(0)}15%{transform:translateY(-5%)}65%{transform:translateY(-108%)}85%{transform:translateY(-108%)}100%{transform:translateY(-100%)}}
-@keyframes shaftFlow{to{background-position:0 120px}}
-@keyframes displayTravel{to{opacity:.58;filter:blur(.4px)}}
-
-/* Visual redesign: cinematic elevator landing, not a moving refrigerator */
-.lift-scene{height:min(66vw,650px);min-height:430px;border-radius:20px;background:radial-gradient(ellipse at 50% 35%,#f3f4f1 0%,#d7dcd8 48%,#b5bdb8 100%);overflow:hidden}
-.lift-frame{inset:64px 13% 46px!important;background:linear-gradient(90deg,#323a36 0%,#78827b 3%,#aeb7b1 5%,#e6e9e6 9%,#8d9891 12%,#434b46 50%,#8d9891 88%,#e6e9e6 91%,#aeb7b1 95%,#78827b 97%,#323a36 100%)!important;box-shadow:0 26px 55px #1d272433,inset 0 0 0 1px #f3f5f3;overflow:hidden;}
-.lift-frame:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#1c2420 0 4%,transparent 4% 96%,#1c2420 96%),repeating-linear-gradient(180deg,#8d9791 0 2px,transparent 2px 118px);opacity:.4}
-.cabin{inset:4px!important;background:linear-gradient(90deg,#202925,#424b45 5%,#e3e7e3 8%,#c8d0ca 22%,#e9edea 50%,#c8d0ca 78%,#e3e7e3 92%,#424b45 95%,#202925)!important;box-shadow:inset 0 0 65px #111a1540!important}
-.cabin-wall{inset:22px 8% 0!important;background:linear-gradient(90deg,#8c9891 0%,#c9d0cb 8%,#e9edea 24%,#e2e7e3 50%,#e9edea 76%,#c9d0cb 92%,#8c9891 100%)!important;box-shadow:inset 0 0 70px #53605933!important}
-.cabin-mirror{left:50%!important;top:19%!important;transform:translateX(-50%);width:38%!important;height:44%!important;border:8px solid #b9c2bc!important;border-radius:2px!important;opacity:.88!important;box-shadow:0 10px 25px #313b3520,inset 0 0 25px #fff5!important}
-.cabin-rail{bottom:18%!important;height:4px!important;left:8%!important;right:8%!important}
-.floor-lamp{top:7%!important;letter-spacing:.24em!important;font-weight:600}
-.door-track{background:linear-gradient(90deg,#252d29,#5e6962 50%,#252d29)!important}
-.door{border:0!important;box-shadow:inset 0 0 38px #17201a20!important}
-.door.left{background:linear-gradient(90deg,#3b4540 0%,#87918b 4%,#cfd5d1 10%,#e8ece9 26%,#d1d7d2 70%,#a8b1ab 92%,#707b74 100%)!important;border-right:1px solid #8c9690!important}
-.door.right{background:linear-gradient(90deg,#707b74 0%,#a8b1ab 8%,#d1d7d2 30%,#e8ece9 74%,#cfd5d1 90%,#87918b 96%,#3b4540 100%)!important;border-left:1px solid #8c9690!important}
-.lift-scene.open .door.left{transform:translateX(-100%)!important}.lift-scene.open .door.right{transform:translateX(100%)!important}
-.floor-strip{height:40px!important;background:#b8c1bbd9!important;backdrop-filter:blur(6px);font-size:9px!important}
-.scene-shade{background:linear-gradient(180deg,#fff3 0%,transparent 25%,transparent 78%,#24302940 100%)!important}
-@media(max-width:720px){.lift-scene{height:480px!important}.lift-frame{inset:70px 7% 48px!important}.cabin-mirror{width:48%!important}}
