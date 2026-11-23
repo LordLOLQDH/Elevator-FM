@@ -46,3 +46,21 @@ footer{margin-top:24px;display:flex;justify-content:space-between;gap:14px;flex-
 @keyframes carTravel{0%{transform:translateY(0)}15%{transform:translateY(-5%)}65%{transform:translateY(-108%)}85%{transform:translateY(-108%)}100%{transform:translateY(-100%)}}
 @keyframes shaftFlow{to{background-position:0 120px}}
 @keyframes displayTravel{to{opacity:.58;filter:blur(.4px)}}
+
+/* Visual redesign: cinematic elevator landing, not a moving refrigerator */
+.lift-scene{height:min(66vw,650px);min-height:430px;border-radius:20px;background:radial-gradient(ellipse at 50% 35%,#f3f4f1 0%,#d7dcd8 48%,#b5bdb8 100%);overflow:hidden}
+.lift-frame{inset:64px 13% 46px!important;background:linear-gradient(90deg,#323a36 0%,#78827b 3%,#aeb7b1 5%,#e6e9e6 9%,#8d9891 12%,#434b46 50%,#8d9891 88%,#e6e9e6 91%,#aeb7b1 95%,#78827b 97%,#323a36 100%)!important;box-shadow:0 26px 55px #1d272433,inset 0 0 0 1px #f3f5f3;overflow:hidden;}
+.lift-frame:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#1c2420 0 4%,transparent 4% 96%,#1c2420 96%),repeating-linear-gradient(180deg,#8d9791 0 2px,transparent 2px 118px);opacity:.4}
+.cabin{inset:4px!important;background:linear-gradient(90deg,#202925,#424b45 5%,#e3e7e3 8%,#c8d0ca 22%,#e9edea 50%,#c8d0ca 78%,#e3e7e3 92%,#424b45 95%,#202925)!important;box-shadow:inset 0 0 65px #111a1540!important}
+.cabin-wall{inset:22px 8% 0!important;background:linear-gradient(90deg,#8c9891 0%,#c9d0cb 8%,#e9edea 24%,#e2e7e3 50%,#e9edea 76%,#c9d0cb 92%,#8c9891 100%)!important;box-shadow:inset 0 0 70px #53605933!important}
+.cabin-mirror{left:50%!important;top:19%!important;transform:translateX(-50%);width:38%!important;height:44%!important;border:8px solid #b9c2bc!important;border-radius:2px!important;opacity:.88!important;box-shadow:0 10px 25px #313b3520,inset 0 0 25px #fff5!important}
+.cabin-rail{bottom:18%!important;height:4px!important;left:8%!important;right:8%!important}
+.floor-lamp{top:7%!important;letter-spacing:.24em!important;font-weight:600}
+.door-track{background:linear-gradient(90deg,#252d29,#5e6962 50%,#252d29)!important}
+.door{border:0!important;box-shadow:inset 0 0 38px #17201a20!important}
+.door.left{background:linear-gradient(90deg,#3b4540 0%,#87918b 4%,#cfd5d1 10%,#e8ece9 26%,#d1d7d2 70%,#a8b1ab 92%,#707b74 100%)!important;border-right:1px solid #8c9690!important}
+.door.right{background:linear-gradient(90deg,#707b74 0%,#a8b1ab 8%,#d1d7d2 30%,#e8ece9 74%,#cfd5d1 90%,#87918b 96%,#3b4540 100%)!important;border-left:1px solid #8c9690!important}
+.lift-scene.open .door.left{transform:translateX(-100%)!important}.lift-scene.open .door.right{transform:translateX(100%)!important}
+.floor-strip{height:40px!important;background:#b8c1bbd9!important;backdrop-filter:blur(6px);font-size:9px!important}
+.scene-shade{background:linear-gradient(180deg,#fff3 0%,transparent 25%,transparent 78%,#24302940 100%)!important}
+@media(max-width:720px){.lift-scene{height:480px!important}.lift-frame{inset:70px 7% 48px!important}.cabin-mirror{width:48%!important}}
