@@ -19,3 +19,30 @@ footer{margin-top:24px;display:flex;justify-content:space-between;gap:14px;flex-
 @keyframes pulse{50%{box-shadow:0 0 0 6px #7a9b860c;opacity:.65}}@keyframes lines{to{background-position:0 40px}}@keyframes cabinShift{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes displayFlicker{50%{opacity:.5}}
 @media(max-width:720px){.site{padding:18px 17px 24px}main{padding-top:28px}.hero{grid-template-columns:1fr;gap:24px}.copy{padding:0}.intro{font-size:14px}h1{font-size:clamp(46px,13vw,68px);margin:15px 0}.lift-scene{height:440px;min-height:0}.lift-frame{inset:58px 8% 0}.player-card{padding:18px;gap:14px;flex-wrap:wrap}.volume{width:100%;padding-left:68px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* Realism pass: clean door meeting edge, deeper shaft, restrained motion */
+.lift-scene{background:linear-gradient(180deg,#bfc6c1 0%,#e3e6e2 18%,#aeb7b2 100%);isolation:isolate}
+.lift-frame{background:linear-gradient(90deg,#707a74 0%,#aab2ad 3%,#e9ece9 7%,#b7bfba 12%,#8b9590 50%,#b7bfba 88%,#e9ece9 93%,#aab2ad 97%,#707a74 100%);box-shadow:inset 0 0 0 3px #7e8882,0 20px 45px #1f29231c}
+.lift-frame:before{content:"";position:absolute;inset:0;z-index:0;background:repeating-linear-gradient(180deg,transparent 0 145px,#6d777222 146px 150px,transparent 151px 295px);opacity:.5}
+.cabin{background:linear-gradient(90deg,#9fa9a3 0%,#e3e7e3 5%,#d3d9d4 16%,#f2f4f1 48%,#c6cec8 82%,#e3e7e3 95%,#9fa9a3 100%);box-shadow:inset 0 0 60px #53605925}
+.cabin-wall{background:linear-gradient(90deg,#9da7a1 0%,#d9dedb 8%,#f0f2ef 20%,#dfe4e0 49%,#f0f2ef 80%,#d9dedb 92%,#9da7a1 100%);box-shadow:inset 0 0 45px #5b665f35}
+.cabin-top{height:22px;background:linear-gradient(#6e7972,#aeb7b1 45%,#d3d9d4);box-shadow:inset 0 -2px 5px #59645c44}
+.cabin-mirror{background:linear-gradient(120deg,#7f8a83,#e0e6e2 28%,#aab5ae 70%,#eff2ef);border:4px solid #aab3ad;opacity:.8;box-shadow:inset 0 0 18px #5b665f25,0 0 0 1px #f5f6f4}
+.cabin-rail{height:5px;background:linear-gradient(#7d8881,#dce1dd,#858f88);box-shadow:0 2px 8px #4b554d44}
+.door-track{gap:0;overflow:hidden;background:#343c37}
+.door{width:calc(50% + 1px);border:0;box-shadow:inset 0 0 22px #515b5414;will-change:transform;backface-visibility:hidden}
+.door:after{display:none!important}
+.door.left{margin-right:-1px;background:linear-gradient(90deg,#7e8982 0%,#c3cbc6 5%,#e8ece9 18%,#bfc8c2 68%,#89938c 100%);border-right:1px solid #78837c}
+.door.right{margin-left:-1px;background:linear-gradient(90deg,#89938c 0%,#c0c8c3 28%,#e9edea 82%,#c3cbc6 96%,#7e8982 100%);border-left:1px solid #78837c}
+.door.left,.door.right{transition:transform 1.85s cubic-bezier(.55,.03,.22,1)}
+.lift-scene.open .door.left{transform:translateX(-102%)}
+.lift-scene.open .door.right{transform:translateX(102%)}
+.door-seam{display:none!important}
+.lift-scene.moving .cabin{animation:carTravel 6.8s cubic-bezier(.5,.04,.2,1) forwards;filter:none}
+.lift-scene.moving .floor-display{animation:displayTravel .7s ease-in-out infinite alternate;color:#a5c2b4}
+.lift-scene.moving .motion-blur{opacity:.38;background:repeating-linear-gradient(180deg,transparent 0 24px,#f7f9f7aa 25px 27px,transparent 28px 72px);animation:shaftFlow .25s linear infinite}
+.lift-scene.moving .lift-frame:before{opacity:1;animation:shaftFlow .38s linear infinite}
+.lift-scene.moving .scene-shade{background:linear-gradient(180deg,#1d272355,transparent 16%,#ffffff12 38%,transparent 60%,#1d272355)}
+@keyframes carTravel{0%{transform:translateY(0)}15%{transform:translateY(-5%)}65%{transform:translateY(-108%)}85%{transform:translateY(-108%)}100%{transform:translateY(-100%)}}
+@keyframes shaftFlow{to{background-position:0 120px}}
+@keyframes displayTravel{to{opacity:.58;filter:blur(.4px)}}
